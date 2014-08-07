@@ -1,0 +1,33 @@
+<script>
+	function Animal (name, speed, focus) {
+		this.name = name ;
+		this.speed = speed ; //range 1-10
+		this.focus = focus ; //range 1-10
+		this.position = 0 ; //range 0-100 
+		this.realSpeed = speed * focus ;  
+	}
+
+	rabbit = new Animal("Juan", 8, 1) ;
+	turtle = new Animal("George", 1, 10) ;
+
+	for (var min = 0; min < 600; min++) {
+		rabbit.position = rabbit.realSpeed * min ;
+		turtle.position = turtle.realSpeed * min ;
+
+		if(rabbit.position >= 100 && turtle.position >= 100) {
+			alert("It's a tie!") ;
+			break ;
+		}
+		else if(rabbit.position >= 100) {
+			alert("Juan the Rabbit has won the race!") ;
+			break ;	
+		} 
+		else if(turtle.position >= 100) {
+			alert("George the Turtle has won the race!!!!!") ;
+			break ;
+		}
+
+	}
+
+
+</script>
